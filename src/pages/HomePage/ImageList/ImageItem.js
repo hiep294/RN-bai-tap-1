@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 
 const ImageItem = ({
   item = {
@@ -9,17 +16,20 @@ const ImageItem = ({
     url: '',
     thumbnailUrl: '',
   },
-  onPress = () => {}
+  onPress = () => {},
 }) => {
-  return (
-    <TouchableOpacity style={{margin: 5}} onPress={onPress}>
-      <Image 
-        style={styles.tinyLogo2}
-        source={{
-          uri: item.thumbnailUrl
-        }}
-      />
-    </TouchableOpacity>
+  return React.useMemo(
+    () => (
+      <TouchableOpacity style={{margin: 5}} onPress={onPress}>
+        <Image
+          style={styles.tinyLogo2}
+          source={{
+            uri: item.thumbnailUrl,
+          }}
+        />
+      </TouchableOpacity>
+    ),
+    [item],
   );
 };
 
@@ -39,6 +49,6 @@ const styles = StyleSheet.create({
     width: 66,
     height: 58,
   },
-})
+});
 
 export default ImageItem;
