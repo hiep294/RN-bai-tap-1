@@ -11,7 +11,7 @@ const ImageList = ({imageList, setImageChosen, toggleModal, getDbImages}) => {
   };
 
   useEffect(() => {
-    // getDbImages();
+    getDbImages();
   }, []);
 
   return (

@@ -6,13 +6,13 @@ import {persistReducer} from 'redux-persist';
 const rootPersistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['homepage'],
+  blacklist: ['homepage'],
 };
 
 const homepagePersistConfig = {
   key: 'homepage',
   storage: AsyncStorage,
-  blacklist: ['imageChosen', 'imageModalVisible'],
+  blacklist: ['imageModalVisible', 'imageChosen'],
 };
 
 const rootReducer = combineReducers({
