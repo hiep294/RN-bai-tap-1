@@ -13,7 +13,8 @@ const homepageActions = {
       .getList()
       .then(res =>
         dispatch({type: homepageTypes.GET_DB_IMAGES, payload: res.data}),
-      );
+      )
+      .catch(err => console.log(err.message));
   },
 };
 
