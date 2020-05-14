@@ -29,7 +29,7 @@ const ImageItem = ({
         />
       </TouchableOpacity>
     ),
-    [albumId, id, title, url, thumbnailUrl],
+    [item.albumId, item.id, item.title, item.url, item.thumbnailUrl],
   );
 };
 
